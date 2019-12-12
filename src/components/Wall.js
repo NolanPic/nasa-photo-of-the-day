@@ -7,6 +7,7 @@ import Plaque from './Plaque';
 import DateChanger from './DateChanger';
 import styled from 'styled-components';
 import WallBg from '../images/wall.jpg';
+import { Center } from '../styles';
 
 
 const WallWithBG = styled.div`
@@ -27,14 +28,14 @@ const Wall = () => {
 
 
     return (
-        <WallWithBG className="wall">
-            {apod && 
-            <div className="frame-plaque">
-                <Frame imgUrl={apod.url} />
-                <Plaque title={apod.title} />
-                <DateChanger onChange={setDate} />
-            </div>}
-        </WallWithBG>
+    <WallWithBG>
+        {apod && 
+        <Center>
+            <Frame imgUrl={apod.url} />
+            <Plaque title={apod.title} />
+            <DateChanger onChange={setDate} />
+        </Center>}
+    </WallWithBG>
     );
 };
 
