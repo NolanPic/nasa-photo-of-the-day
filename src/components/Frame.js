@@ -45,7 +45,6 @@ const FrameWrap = styled.div`
     }
 `;
 
-
 const Frame = ({ imgUrl }) => {
     return (
         <FrameWrap>
