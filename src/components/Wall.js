@@ -5,6 +5,14 @@ import { api_key } from '../config';
 import Frame from './Frame';
 import Plaque from './Plaque';
 import DateChanger from './DateChanger';
+import styled from 'styled-components';
+import WallBg from '../images/wall.jpg';
+
+
+const WallWithBG = styled.div`
+    height: 100vh;
+    background-image: url('${WallBg}');
+`;
 
 const Wall = () => {
 
@@ -17,15 +25,16 @@ const Wall = () => {
         console.log('selected date', date);
     }, [date]);
 
+
     return (
-        <div className="wall">
+        <WallWithBG className="wall">
             {apod && 
             <div className="frame-plaque">
                 <Frame imgUrl={apod.url} />
                 <Plaque title={apod.title} />
                 <DateChanger onChange={setDate} />
             </div>}
-        </div>
+        </WallWithBG>
     );
 };
 
